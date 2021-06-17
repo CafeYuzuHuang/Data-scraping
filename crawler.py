@@ -24,6 +24,7 @@ if __name__ == "__main__": WD_Path = os.getcwd() # executed
 else: WD_Path = os.path.dirname(__file__) # imported
 WD_Path += "\\chromedriver.exe" # 使用的Webdriver所在路徑
 
+
 # ---< Utility functions >---
 def ValidateDate(d):
     """ 驗證日期格式，並擷取出年月日後以列表回傳 """
@@ -42,7 +43,7 @@ def ValidateDate(d):
 
 
 def ValidateUrl(url):
-    """ 驗證url有效性， """
+    """ 驗證url有效性，url中必須包含指定的域名與關鍵字，回傳的布林值為驗證結果 """
     p = urlparse(url)
     print(p)
     # 確認域名，以及路徑是否包含關鍵字詞
@@ -55,7 +56,7 @@ def ValidateUrl(url):
 
 
 def GetName(url):
-    """ 從網址中取得標的名稱，之後用於檔案命名 """
+    """ 從網址中取得標的名稱後回傳，之後用於檔案命名 """
     n1 = url.find("/indices/") + len("/indices/")
     n2 = url.find("-historical-data")    
     return url[n1:n2]
@@ -142,7 +143,7 @@ def FetchData(url, d1, d2):
 
 
 def PrepData(df0, dpath, dname):
-    """ 預處理數據，包含資料排序/格式整理，以及與本地資料合併 """
+    """ 預處理數據，包含資料排序/格式整理，以及與本地資料合併。回傳預處理後的DataFrame """
     df = df0.copy()
     df.index = pd.to_datetime(df.index) # 日期資料格式轉換
     df = df.iloc[::-1] # reversed order
