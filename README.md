@@ -8,4 +8,4 @@
 ---
 關於作者的五四三：
 * 聊聊基本面：在[這裡](https://www.macromicro.me/shared_chart/user/174436)看總經與產業觀點
-* 玩玩技術面：在[這裡](https://github.com/CafeYuzuHuang/My-first-PC-app-for-AI-based-stock-trading)有簡單的玩具
+* 玩玩技術面：在[這裡](https://github.com/CafeYuzuHuang/My-first-PC-app-for-AI-based-stock-trading)有簡單但操作上可以更人性些的玩具
